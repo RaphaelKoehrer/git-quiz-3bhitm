@@ -1,7 +1,7 @@
 # GIT Quiz - Angabe
 
 ## Aufgabenstellung
-**Name:** _____________________  
+**Name:** Raphael Köhrer  
 
 ### Ziel
 Zeige in diesem Quiz, dass du die Grundlagen von Git verstanden hast.
@@ -38,7 +38,23 @@ Schaue dir nun die komplette Commit-History an. Denn im aktuellen Projekt funkti
 
 ----------------------- 
 
-Du hast das Quiz nun erfolgreich abgeschlossen. Gib HIER den Link zu deinem geforkten Repository an: _____________________
+Du hast das Quiz nun erfolgreich abgeschlossen. Gib HIER den Link zu deinem geforkten Repository an: (https://github.com/RaphaelKoehrer/git-quiz-3bhitm.git)
 
 Gib anschließend dieses ANGABE-File bei MOODLE ab!
 
+# git-quiz-3bhitm
+# Punkt 5: Git-History analysieren
+
+## Fehler-Commit
+Der Fehler in der Navigation wurde im Commit **d87473d** (`feature`) eingeführt.
+
+## Vorgehensweise / Befehl
+Um den fehlerhaften Commit zu finden, habe ich `git bisect` verwendet:
+
+```bash
+git bisect start
+git bisect bad
+git bisect good 6215e02
+# nach jedem Test:
+git bisect good   # oder git bisect bad
+git bisect reset
